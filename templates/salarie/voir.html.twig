@@ -1,0 +1,77 @@
+{% extends "base.html.twig" %}
+
+
+{% block title %}{{ salarie.prenom|capitalize }}{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        th{
+            width: 200px;
+        }
+    </style>
+{% endblock %}
+
+
+{% block h1 %}{{ salarie.prenom|capitalize }}{% endblock %}
+
+
+{% block body %}
+
+<div class="container">
+
+    <a class="btn btn-dark my-3" href="{{ path('app_salarie') }}">Retour</a>
+<div class="col-md-6 mx-auto">
+    <table class="table table-striped table-hover  mt-3">
+
+        <tr>
+            <th>ID</th>
+            <td>{{ salarie.id }}</td>
+        </tr>
+
+        <tr>
+            <th>Prenom</th>
+            <td>{{ salarie.prenom |capitalize }}</td>
+        </tr>
+
+        <tr>
+            <th>Nom</th>
+            <td>{{ salarie.nom | upper }}</td>
+        </tr>
+
+        <tr>
+            <th>Date de naissance</th>
+            <td>{{ salarie.datadenaissance|date("l d F Y") }}</td>
+        </tr>
+
+         <tr>
+            <th>Poste</th>
+            <td>{{ salarie.poste }}</td>
+        </tr>
+
+        <tr>
+            <th>Salaire</th>
+            <td>{{ salarie.salaire }} €</td>
+        </tr>
+
+
+        <tr>
+            <th>Email</th>
+            <td>{{ salarie.email }}</td>
+        </tr>
+
+
+        <tr>
+            <th>Téléphone</th>
+            <td>{{ salarie.telephone }}</td>
+        </tr>
+
+
+        <tr>
+            <th>Adresse</th>
+            <td>{{ salarie.adresse }}</td>
+        </tr>
+    </table>
+    </div>
+</div>
+
+{% endblock %}

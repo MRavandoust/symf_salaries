@@ -1,0 +1,72 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Ajouter un salarié
+{% endblock %}
+
+{% block head %}
+	Ajouter un salarié
+{% endblock %}
+
+
+{% block body %}
+
+	<div class="container">
+		<a class="btn btn-success my-3" href="{{ path('app_salarie') }}">Retour</a>
+	</div>
+
+	<div
+		class="col-md-6 mx-auto ">
+
+		{# {{ form(formProduit) }} #}
+
+		{{ form_start(form) }}
+
+		<div class="row">
+			<div class="col-md-6">
+				{{ form_row(form.prenom) }}
+			</div>
+
+			<div class="col-md-6">
+				{{ form_row(form.nom) }}
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6">
+				{{ form_row(form.datadenaissance) }}
+			</div>
+
+			<div class="col-md-6">
+				{{ form_row(form.poste) }}
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-8">
+				{{ form_row(form.adresse) }}
+			</div>
+
+			<div class="col-md-4">
+				{{ form_row(form.salaire) }}
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6">
+				{{ form_row(form.telephone) }}
+			</div>
+
+			<div class="col-md-6">
+				{{ form_row(form.email) }}
+			</div>
+		</div>
+
+		<input type="submit" value="Ajouter" class="btn btn-primary col-12 mt-3">
+
+		{{ form_end(form) }}
+
+	</div>
+
+
+{% endblock %}
